@@ -1,3 +1,4 @@
+// Machin
 #include<iostream>
 #include<string>
 #include<math.h>
@@ -176,6 +177,7 @@ int main() {
     print(Pi);
     cout << endl;
     cout << "Time used " << (double)clock() / CLOCKS_PER_SEC;
+    system("pause");
     //add(frist_num, second_num);
     //sub(frist_num, second_num);
     //high_mult(frist_num, second_num, outcome_num);
