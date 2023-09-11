@@ -1,6 +1,7 @@
 project(level1)
 
-add_executable(p01_running_letter p01_running_letter/main.cpp)
+add_executable(p01_running_letter p01_running_letter/main.cpp
+        ../level2/GA/main.cpp)
 
 add_executable(p02_is_prime p02_is_prime/main.c)
 
