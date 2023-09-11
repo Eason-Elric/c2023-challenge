@@ -3,7 +3,7 @@
 #include<windows.h>
 #include<conio.h>
 using namespace std;
-string str = "";
+string str;
 bool check = false;
 HANDLE hOnt = GetStdHandle(STD_OUTPUT_HANDLE);
 COORD Pos;
@@ -19,7 +19,7 @@ int main() {
     SetConsoleCursorPosition(hOnt, Pos);
     for(int i = 0; i < 5 ;i++)
         cout << "                                  ";
-    while (1) {
+    while (true) {
         if(Pos.X == 0)
             check = true;
         if (Pos.X == screenInfo.dwSize.X - str.length() + 1) {
