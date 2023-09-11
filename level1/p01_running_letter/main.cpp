@@ -3,7 +3,7 @@
 #include<windows.h>
 #include<conio.h>
 using namespace std;
-string str = "\0";
+string str = "";
 bool check = false;
 HANDLE hOnt = GetStdHandle(STD_OUTPUT_HANDLE);
 COORD Pos;
