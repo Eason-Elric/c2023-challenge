@@ -1,4 +1,4 @@
-// Machin
+// Machin 计算一项得到1.4位有效数字
 #include<iostream>
 #include<string>
 #include<math.h>
