@@ -8,7 +8,7 @@
 using namespace std;
 int num = 0;
 int frist_num[maxn] = {0}, second_num[maxn] = {0}, outcome_num[maxn] = {0};
-int frist_x[maxn] = {0}, second_x[maxn] = {0}, temp_x[maxn] = {0}, const_x[maxn] = {0};
+int frist_x[maxn] = {0}, second_x[maxn] = {0}, temp_x[maxn] = {0};
 int Pi[maxn] = {0};
 bool flag = true;
 void scan(int num__[]) {
@@ -145,8 +145,6 @@ int main() {
     cin.tie(0);
     cout.tie(0);
     cin >> num;
-    const_x[0] = 1;
-    const_x[1] = -1;
     frist_num[0] = second_num[0] = num + 9;
     frist_num[num + 9] = second_num[num + 9] = 1;
     single_mult(frist_num, 4); // x1 * 4
@@ -176,7 +174,7 @@ int main() {
     signle_div(outcome_num, pow(10, 8), Pi);
     print(Pi);
     cout << endl;
-    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC;
+    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC  << "s" << endl;
     system("pause");
     //add(frist_num, second_num);
     //sub(frist_num, second_num);
@@ -186,3 +184,7 @@ int main() {
     //signle_div(frist_num, 3, outcome_num);
     return 0;
 }
+
+// 10000位：8s左右
+// 100000位：180s左右
+// 1000000位：时间过长
