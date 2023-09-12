@@ -5,5 +5,4 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(level1)
-add_executable(PI "level2/PI/main(Machin).cpp"
-        level2/PI/main.cpp)
+add_subdirectory(level2)
