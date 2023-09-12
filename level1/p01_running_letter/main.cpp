@@ -39,5 +39,6 @@ int main() {
         if(_kbhit())
             break;
     }
+    system("pause");
     return 0;
 }

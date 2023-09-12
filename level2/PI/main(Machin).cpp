@@ -174,7 +174,7 @@ int main() {
     signle_div(outcome_num, pow(10, 8), Pi);
     print(Pi);
     cout << endl;
-    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC  << "s" << endl;
+    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC  << "s";
     system("pause");
     //add(frist_num, second_num);
     //sub(frist_num, second_num);

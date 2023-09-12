@@ -23,5 +23,6 @@ int main() {
         cout << "Prime.";
     else
         cout << "Not prime.";
+    system("pause");
     return 0;
 }
