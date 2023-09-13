@@ -141,7 +141,7 @@ int signle_div(int frist__[], int second, int outcome__[]) {
     return remainder;
 }
 int main() {
-    ios::sync_with_stdio(false);
+    //ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
     cin >> num;
@@ -174,7 +174,7 @@ int main() {
     signle_div(outcome_num, pow(10, 8), Pi);
     print(Pi);
     cout << endl;
-    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC  << "s";
+    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC  << "s" << endl;
     system("pause");
     //add(frist_num, second_num);
     //sub(frist_num, second_num);

@@ -15,14 +15,14 @@ bool is_prime(int num__){
     return true;
 }
 int main() {
-    ios::sync_with_stdio(false);
+    //ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
     cin >> num;
     if(is_prime(num))
-        cout << "Prime.";
+        cout << "Prime." << endl;
     else
-        cout << "Not prime.";
+        cout << "Not prime." << endl;
     system("pause");
     return 0;
 }
