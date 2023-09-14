@@ -6,6 +6,9 @@ using namespace std;
 long long int num = 0;
 int reserved_num = 10000, k = 0, temp = 0, outcome_num = 0;
 int main() {
+    //ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
     cin >> num;
     long long int iterate_num = 14 * num / 4;
     int* remainder = new int[iterate_num + 10];
