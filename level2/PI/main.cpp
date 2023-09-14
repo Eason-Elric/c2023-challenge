@@ -5,10 +5,9 @@
 using namespace std;
 long long int num = 0;
 int reserved_num = 10000, k = 0, temp = 0, outcome_num = 0;
+char str[5] = "";
+bool flag = true;
 int main() {
-    //ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
     cin >> num;
     long long int iterate_num = 14 * num / 4;
     int* remainder = new int[iterate_num + 10];
@@ -27,15 +26,25 @@ int main() {
             temp = temp * k; // 计算 k / (2 * k + 1)
         }
         iterate_num -= 14; // 迭代
-        printf("%.4d", outcome_num + temp / reserved_num); // 输出上一轮的余数加上这轮的商
+        if(flag){
+            itoa(outcome_num + temp / reserved_num, str, 10);
+            for(int i = 0; i < 4; i++){
+                cout << str[i];
+                if(i == 0)
+                    cout << ".";
+            }
+            flag = false;
+        }
+        else
+            printf("%.4d", outcome_num + temp / reserved_num); // 输出上一轮的余数加上这轮的商
         outcome_num = temp % reserved_num;
     }
+    delete[] remainder;
     cout << endl;
     cout << "Time used " << (double)clock() / CLOCKS_PER_SEC  << "s" << endl;
-    delete[] remainder;
     system("pause");
     return 0;
 }
 // 10000位：0.8s左右
 // 100000位：65s左右
-//
+// bug: 收敛速度过慢，导致精度过小时会有误差，当精度大于100时，不存在误差
