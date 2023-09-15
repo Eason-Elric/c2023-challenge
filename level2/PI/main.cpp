@@ -13,9 +13,9 @@ int main() {
     int* remainder = new int[iterate_num + 10];
     for(int i = 0; i < iterate_num; i++)
         remainder[i] = reserved_num / 5; // 两边同时乘于2000，将小数转化为整数
-    while(iterate_num != 0) {
+    while(iterate_num > 0) {
         temp = 0;
-        k = iterate_num;
+        k = 14 * num / 4;
         while(1) {
             temp += remainder[k] * reserved_num; // 将小数扩大为整数
             remainder[k] =  temp % (2 * k - 1); // 将每一轮余数记录，留到下一轮继续计算
@@ -47,4 +47,4 @@ int main() {
 }
 // 10000位：0.8s左右
 // 100000位：65s左右
-// bug: 收敛速度过慢，导致精度过小时会有误差，当精度大于100时，不存在误差
+// bug: 收敛速度过慢，导致精度过小时会有误差，当精度大于10时，不存在误差
