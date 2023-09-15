@@ -15,7 +15,7 @@ int main() {
         remainder[i] = reserved_num / 5; // 两边同时乘于2000，将小数转化为整数
     while(iterate_num > 0) {
         temp = 0;
-        k = 14 * num / 4;
+        k = iterate_num;
         while(1) {
             temp += remainder[k] * reserved_num; // 将小数扩大为整数
             remainder[k] =  temp % (2 * k - 1); // 将每一轮余数记录，留到下一轮继续计算
