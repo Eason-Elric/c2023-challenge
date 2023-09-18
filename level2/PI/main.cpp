@@ -1,4 +1,5 @@
 // Pi / 2 = Σk / (2 * k + 1)...
+// 每计算14次，精度至少增加四位
 #include<stdio.h>
 #include<time.h>
 #include<iostream>
@@ -10,7 +11,7 @@ bool flag = true;
 int main() {
     cin >> num;
     long long int iterate_num = 14 * num / 4;
-    int* remainder = new int[iterate_num + 10];
+    int* remainder = new int[iterate_nu m + 10];
     for(int i = 0; i < iterate_num; i++)
         remainder[i] = reserved_num / 5; // 两边同时乘于2000，将小数转化为整数
     while(iterate_num > 0) {
@@ -25,7 +26,7 @@ int main() {
                 break;
             temp = temp * k; // 计算 k / (2 * k + 1)
         }
-        iterate_num -= 14; // 迭代
+        iterate_num -= 14; // 迭代14次
         if(flag){
             itoa(outcome_num + temp / reserved_num, str, 10);
             for(int i = 0; i < 4; i++){
