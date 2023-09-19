@@ -12,7 +12,7 @@ int frist_x[maxn] = {0}, second_x[maxn] = {0}, temp_x[maxn] = {0};
 int Pi[maxn] = {0};
 bool flag = true;
 void scan(int num__[]) {
-    string str = "\0";
+    string str = "";
     getline(cin, str);
     num__[0] = str.length();
     for(int i = 1; i <= num__[0]; i++)

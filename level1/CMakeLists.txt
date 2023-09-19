@@ -6,12 +6,11 @@ add_executable(p02_is_prime p02_is_prime/main.cpp)
 
 add_executable(p03_all_primes "p03_all_primes/main(1).cpp")
 
-add_executable(p03_all_primes_ "p03_all_primes/main(2).cpp"
-        "p03_all_primes/main(2).cpp")
+add_executable(p03_all_primes_ "p03_all_primes/main(2).cpp")
 
 add_executable(p04_goldbach p04_goldbach/main.cpp)
 
-add_executable(p05_encrypt_decrypt p05_encrypt_decrypt/main.c)
+add_executable(p05_encrypt_decrypt p05_encrypt_decrypt/main.cpp)
 
 add_executable(p06_hanoi p06_hanoi/main.cpp)
 
