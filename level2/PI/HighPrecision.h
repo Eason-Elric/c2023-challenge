@@ -1,3 +1,5 @@
+#ifndef _STRING_
+#define _STRING_
 #include<string>
 #define maxn 1000010
 using namespace std;
@@ -140,3 +142,5 @@ int signle_div(int frist__[], int second, int outcome__[]) {
         outcome__[0]--;
     return remainder;
 }
+
+#endif
