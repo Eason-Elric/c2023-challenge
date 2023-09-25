@@ -1,3 +1,5 @@
+#ifndef _ISPRIME_H_
+#define _ISPRIME_H_
 #include<math.h>
 
 bool is_prime(int num__){
@@ -12,3 +14,5 @@ bool is_prime(int num__){
             return false;
     return true;
 }
+
+#endif

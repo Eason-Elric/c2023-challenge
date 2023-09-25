@@ -1,5 +1,5 @@
-#ifndef _STRING_
-#define _STRING_
+#ifndef _HIGHPRECISION_H_
+#define _HIGHPRECISION_H_
 #include<string>
 #define maxn 1000010
 using namespace std;
