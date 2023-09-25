@@ -15,4 +15,4 @@ bool is_prime(int num__){
     return true;
 }
 
-#endif
+#endif // _ISPRIME_H_

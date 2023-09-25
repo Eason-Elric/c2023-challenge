@@ -143,4 +143,4 @@ int signle_div(int frist__[], int second, int outcome__[]) {
     return remainder;
 }
 
-#endif
+#endif // _HIGHPRECISION_H_
