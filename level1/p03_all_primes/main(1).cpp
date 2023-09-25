@@ -14,6 +14,6 @@ int main() {
         if(is_prime(i))
             cout << i << " ";
     cout << endl;
-    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC;
+    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC << "s";
     return 0;
 }

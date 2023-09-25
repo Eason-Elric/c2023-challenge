@@ -27,6 +27,6 @@ int main() {
     for(int i = 0; i < count; i++)
         cout << prime[i] << " ";
     cout << endl;
-    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC;
+    cout << "Time used " << (double)clock() / CLOCKS_PER_SEC << "s";
     return 0;
 }
