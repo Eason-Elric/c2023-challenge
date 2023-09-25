@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
+
 string str = "";
 int choose__ = 0, num = 0;
 
@@ -71,7 +72,7 @@ int main(){
                 decode(str, num);
                 break;
             case 3:
-                return 0;
+                exit(0);
         }
         cout << endl;
     }

@@ -4,14 +4,16 @@
 #include<time.h>
 #include<iostream>
 using namespace std;
+
 long long int num = 0;
 int reserved_num = 10000, k = 0, temp = 0, outcome_num = 0;
 char str[5] = "";
 bool flag = true;
+
 int main() {
     cin >> num;
     long long int iterate_num = 14 * num / 4;
-    int* remainder = new int[iterate_nu m + 10];
+    int* remainder = new int[iterate_num + 10];
     for(int i = 0; i < iterate_num; i++)
         remainder[i] = reserved_num / 5; // 两边同时乘于2000，将小数转化为整数
     while(iterate_num > 0) {
@@ -37,7 +39,7 @@ int main() {
             flag = false;
         }
         else
-            printf("%.4d", outcome_num + temp / reserved_num); // 输出上一轮的余数加上这轮的商
+            printf("%.4d", outcome_num + temp / reserved_num); // 输出上一轮的余数加上这轮的商, %.4d == %04d
         outcome_num = temp % reserved_num;
     }
     delete[] remainder;

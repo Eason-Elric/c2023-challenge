@@ -2,7 +2,9 @@
 #include<math.h>
 #include<time.h>
 using namespace std;
+
 int num = 0;
+
 bool is_prime(int num__){
     if(num__ <= 1)
         return false;
@@ -15,6 +17,7 @@ bool is_prime(int num__){
             return false;
     return true;
 }
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);

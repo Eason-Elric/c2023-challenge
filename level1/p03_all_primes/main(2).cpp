@@ -3,9 +3,11 @@
 #include<time.h>
 #define maxn 10010
 using namespace std;
+
 int num = 0, count = 0;
 int prime[maxn] = {0};
 bool is_prime[maxn];
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);

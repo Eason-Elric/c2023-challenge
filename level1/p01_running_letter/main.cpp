@@ -3,11 +3,13 @@
 #include<windows.h>
 #include<conio.h>
 using namespace std;
+
 string str;
 bool check = false;
 HANDLE hOnt = GetStdHandle(STD_OUTPUT_HANDLE);
 COORD Pos;
 CONSOLE_SCREEN_BUFFER_INFO screenInfo;
+
 int main() {
     //ios::sync_with_stdio(false);
     cin.tie(0);
