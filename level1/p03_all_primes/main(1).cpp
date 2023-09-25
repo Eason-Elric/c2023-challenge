@@ -1,6 +1,6 @@
 #include<iostream>
 #include<time.h>
-#include"..\..\level1\IsPrime.h"
+#include"../LibraryFiles/IsPrime.h"
 using namespace std;
 
 int num = 0;

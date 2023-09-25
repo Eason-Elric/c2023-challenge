@@ -1,11 +1,27 @@
 #include<iostream>
 #include<windows.h>
+#include<conio.h>
 #include"Maze.h"
+#define CTRL 0xE0
+#define UP 0x48
+#define DOWN 0x50
+#define LEFT 0x4B
+#define RIGHT 0x4D
+
 using namespace std;
 
-/*HANDLE hOnt = GetStdHandle(STD_OUTPUT_HANDLE);
+HANDLE hOnt = GetStdHandle(STD_OUTPUT_HANDLE);
 COORD Pos;
-CONSOLE_SCREEN_BUFFER_INFO screenInfo;*/
+CONSOLE_SCREEN_BUFFER_INFO screenInfo;
+
+char keystroke = '\0';
+
+void GotoPos(int x, int y){
+    Pos.X = x;
+    Pos.Y = y;
+    GetConsoleScreenBufferInfo(hOnt, &screenInfo);
+    SetConsoleCursorPosition(hOnt, Pos);
+}
 
 int main(){
     //ios::sync_with_stdio(false);
@@ -15,9 +31,7 @@ int main(){
     cin >> maze_row;
     cout << "\nPlease enter the colume for the maze: ";
     cin >> maze_colume;
-    cout << endl;
-    /*Pos.X = Pos.Y = 1;
-    GetConsoleScreenBufferInfo(hOnt, &screenInfo);*/
+    system("cls");
     jump:
     init__();
     FindBlock(); // 将起点旁边的墙壁压入vector
@@ -40,6 +54,49 @@ int main(){
                 cout << (char)0xa8 << (char)0x80 ; // 输出小方块
         }
         cout << endl;
+    }
+    GotoPos(1, 1);
+    while(1){
+        if(_getch() == CTRL){
+            GotoPos(Pos.X, Pos.Y);
+            cout << " ";
+            keystroke = _getch();
+            switch (keystroke) {
+                case UP: {
+                    if(maze[Pos.Y - 1][Pos.X] != Wall)
+                        Pos.Y--;
+                    break;
+                }
+                case DOWN: {
+                    if(maze[Pos.Y + 1][Pos.X] != Wall)
+                        Pos.Y++;
+                    break;
+                }
+                case LEFT:{
+                    if(maze[Pos.Y][Pos.X - 1] != Wall)
+                        Pos.X--;
+                    break;
+                }
+                case RIGHT:{
+                    if(maze[Pos.Y][Pos.X + 1] != Wall)
+                        Pos.X++;
+                    break;
+                }
+                default:{
+                    system("cls");
+                    system("pause");
+                    exit(0);
+                }
+            }
+            GotoPos(Pos.X, Pos.Y);
+            cout << (char)0xa7 << (char)0xb0;
+        }
+        if(Pos.X == End.x && Pos.Y == End.y){
+            system("cls");
+            GotoPos(0, 0);
+            cout << "Congratulate!\n";
+            system("pause");
+        }
     }
     system("pause");
     return 0;

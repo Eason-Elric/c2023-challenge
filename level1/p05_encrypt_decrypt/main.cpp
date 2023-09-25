@@ -15,7 +15,7 @@ void encode(string str__, int n) {
             else
                 str__[i] = (char)(c + n % 26 - 26);
         else if(c >= 'A' && c <= 'Z')
-            if(c + n%26 <= 'Z')
+            if(c + n % 26 <= 'Z')
                 str__[i] = (char)(c + n % 26);
             else
                 str__[i] = (char)(c + n % 26 - 26);

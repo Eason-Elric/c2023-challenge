@@ -1,6 +1,7 @@
 #ifndef _MAZE_H_
 #define _MAZE_H_
 #include<vector>
+#include<string.h>
 #define max_size 10010
 #define Wall 0
 #define Path 1
@@ -82,4 +83,3 @@ void CreateMaze(){
 }
 
 #endif // _MAZE_H_
-
