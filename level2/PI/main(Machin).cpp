@@ -4,7 +4,6 @@
 #include<time.h>
 #include<windows.h>
 #include"HighPrecision.h"
-#define maxn 1000010
 using namespace std;
 
 int num = 0;
