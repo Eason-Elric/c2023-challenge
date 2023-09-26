@@ -15,9 +15,9 @@ add_executable(p05_encrypt_decrypt p05_encrypt_decrypt/main.cpp)
 add_executable(p06_hanoi p06_hanoi/main.cpp)
 
 add_executable(p07_maze p07_maze/main.cpp
-        p07_maze/Maze.h
+        p07_maze/PrimMaze.h
         p07_maze/Move.h
-        p07_maze/ConstNum.h
+        p07_maze/ConstData.h
 )
 
 add_executable(p08_push_boxes p08_push_boxes/main.c)

@@ -7,10 +7,6 @@ int maze_row = 0, maze_colume = 0;
 int row = 1, colume = 1; // 当前位置
 int maze[MAXSIZE][MAXSIZE];
 
-enum Direction{
-    Up = 1, Down, Left, Right
-};
-
 struct Block{
     int x, y, direction;
     Block(int x_, int y_, int direction_){
@@ -26,7 +22,7 @@ struct Point{
 
 std::vector<Block> block;
 
-void init__(){
+void InitMaze(){
     maze_row += !(maze_row % 2);
     maze_colume += !(maze_colume % 2); // 保证迷宫大小为奇数
     memset(maze, WALL, sizeof(maze));
@@ -45,7 +41,9 @@ void FindBlock(){
         block.push_back(Block(row, colume + 1, Right));
 }
 
-void CreateMaze(){
+void CreatePrimMaze(){
+    InitMaze();
+    FindBlock(); // 将起点旁墙壁压入栈
     srand((unsigned)time(NULL)); // 随机数种子
     while(block.size() != 0){
         int BlockSize = block.size();

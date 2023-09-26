@@ -1,6 +1,6 @@
 #include <iostream>
-#include "ConstNum.h"
-#include "Maze.h"
+#include "ConstData.h"
+#include "PrimMaze.h"
 #include "Move.h"
 
 using namespace std;
@@ -15,9 +15,7 @@ int main(){
     cin >> maze_colume;
     system("cls");
     jump:
-    init__();
-    FindBlock(); // 将起点旁边的墙壁压入vector
-    CreateMaze();
+    CreatePrimMaze();
     if(maze[maze_row][maze_colume] != WALL){
         End.x = maze_row;
         End.y = maze_colume;
@@ -40,11 +38,12 @@ int main(){
     GotoPos(1, 1);
     while(1){
         Move();
-        if(Pos.X == End.x && Pos.Y == End.y){
+        if(Pos.Y == End.x && Pos.X == End.y){
             system("cls");
             GotoPos(0, 0);
             cout << "Congratulate!\n";
             system("pause");
+            exit(0);
         }
     }
     system("pause");
