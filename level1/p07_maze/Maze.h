@@ -1,14 +1,11 @@
 #ifndef _MAZE_H_
 #define _MAZE_H_
-#include<vector>
-#include<string.h>
-#define max_size 10010
-#define Wall 0
-#define Path 1
+#include <vector>
+#include <string.h>
 
 int maze_row = 0, maze_colume = 0;
 int row = 1, colume = 1; // 当前位置
-int maze[max_size][max_size];
+int maze[MAXSIZE][MAXSIZE];
 
 enum Direction{
     Up = 1, Down, Left, Right
@@ -32,19 +29,19 @@ std::vector<Block> block;
 void init__(){
     maze_row += !(maze_row % 2);
     maze_colume += !(maze_colume % 2); // 保证迷宫大小为奇数
-    memset(maze, Wall, sizeof(maze));
-    maze[1][1] = Path;
+    memset(maze, WALL, sizeof(maze));
+    maze[1][1] = PATH;
     Start.x = Start.y = 1;
 }
 
 void FindBlock(){
-    if(row - 1 > 0 && maze[row - 1][colume] == Wall) // up
+    if(row - 1 > 0 && maze[row - 1][colume] == WALL) // up
         block.push_back(Block(row - 1, colume, Up));
-    if(row + 1 <= maze_row && maze[row + 1][colume] == Wall) // down
+    if(row + 1 <= maze_row && maze[row + 1][colume] == WALL) // down
         block.push_back(Block(row + 1, colume, Down));
-    if(colume - 1 > 0 && maze[row][colume - 1] == Wall) // left
+    if(colume - 1 > 0 && maze[row][colume - 1] == WALL) // left
         block.push_back(Block(row, colume - 1, Left));
-    if(colume + 1 <= maze_colume && maze[row][colume + 1] == Wall) // right
+    if(colume + 1 <= maze_colume && maze[row][colume + 1] == WALL) // right
         block.push_back(Block(row, colume + 1, Right));
 }
 
@@ -74,8 +71,8 @@ void CreateMaze(){
                 break;
             }
         }
-        if(maze[row][colume] == Wall){
-            maze[SelectBlock.x][SelectBlock.y] = maze[row][colume] = Path;
+        if(maze[row][colume] == WALL){
+            maze[SelectBlock.x][SelectBlock.y] = maze[row][colume] = PATH;
             FindBlock();
         }
         block.erase(block.begin() + random);

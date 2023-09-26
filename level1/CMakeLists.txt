@@ -16,6 +16,8 @@ add_executable(p06_hanoi p06_hanoi/main.cpp)
 
 add_executable(p07_maze p07_maze/main.cpp
         p07_maze/Maze.h
+        p07_maze/Move.h
+        p07_maze/ConstNum.h
 )
 
 add_executable(p08_push_boxes p08_push_boxes/main.c)
