@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 #include<time.h>
 #include"../LibraryFiles/IsPrime.h"
 using namespace std;
@@ -9,6 +9,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
+    cout << "Please input a number: ";
     cin >> num;
     for(int i = 2; i <= num; i++)
         if(is_prime(i))

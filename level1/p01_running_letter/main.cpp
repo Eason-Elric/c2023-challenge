@@ -1,7 +1,7 @@
-#include<iostream>
-#include<string>
-#include<windows.h>
-#include<conio.h>
+#include <iostream>
+#include <string>
+#include <windows.h>
+#include <conio.h>
 using namespace std;
 
 string str;
@@ -16,7 +16,7 @@ int main() {
     cout.tie(0);
     Pos.X = Pos.Y = 0;
     GetConsoleScreenBufferInfo(hOnt, &screenInfo);
-    cout << "Please input a string:";
+    cout << "Please input a string: ";
     getline(cin, str);
     SetConsoleCursorPosition(hOnt, Pos);
     for(int i = 0; i < 5 ;i++)

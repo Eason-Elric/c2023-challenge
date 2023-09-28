@@ -1,16 +1,16 @@
 #ifndef _CONSTNUM_H_
 #define _CONSTNUM_H_
 
-// PrimMaze
+// Maze
 #define MAXSIZE 10010
 #define WALL 0
 #define PATH 1
 
 enum Direction{
-    Up = 1, Down, Left, Right
+    Nothing = 0, Up, Down, Left, Right
 };
 
-//Move
+// Move
 #define CTRL 0xE0
 #define UP 0x48
 #define DOWN 0x50

@@ -52,6 +52,12 @@ void Move(){
         GotoPos(Pos.X, Pos.Y);
         std::cout << (char)0xa7 << (char)0xb0;
     }
+    else{
+        system("cls");
+        system("pause");
+        exit(0);
+    }
+
 }
 
 #endif // _MOVE_H_

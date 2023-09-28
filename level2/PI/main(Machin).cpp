@@ -1,9 +1,9 @@
 // Machin 计算一项得到1.4位有效数字
-#include<iostream>
-#include<math.h>
-#include<time.h>
-#include<windows.h>
-#include"HighPrecision.h"
+#include <iostream>
+#include <math.h>
+#include <time.h>
+#include <windows.h>
+#include "HighPrecision.h"
 using namespace std;
 
 int num = 0;
@@ -16,6 +16,7 @@ int main() {
     //ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
+    cout << "Please input a number: ";
     cin >> num;
     frist_num[0] = second_num[0] = num + 9;
     frist_num[num + 9] = second_num[num + 9] = 1;

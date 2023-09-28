@@ -1,8 +1,8 @@
 // Pi / 2 = Σk / (2 * k + 1)...
 // 每计算14次，精度至少增加四位
-#include<stdio.h>
-#include<time.h>
-#include<iostream>
+#include <stdio.h>
+#include <time.h>
+#include <iostream>
 using namespace std;
 
 long long int num = 0;
@@ -11,6 +11,10 @@ char str[5] = "";
 bool flag = true;
 
 int main() {
+    //ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    cout << "Please input a number: ";
     cin >> num;
     long long int iterate_num = 14 * num / 4;
     int* remainder = new int[iterate_num + 10];

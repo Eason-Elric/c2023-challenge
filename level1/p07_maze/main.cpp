@@ -1,21 +1,47 @@
 #include <iostream>
 #include "ConstData.h"
-#include "PrimMaze.h"
+#include "Maze.h"
 #include "Move.h"
 
 using namespace std;
+
+int ChooseCreate = 0;
 
 int main(){
     //ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
+    cout << "--------------------------" << endl;
+    cout << "1: Prim" << endl;
+    cout << "2: DFS" << endl;
+    cout << "3: Recursive segmentation" << endl;
+    cout << "--------------------------" << endl;
+    cout << "Please choose: ";
+    cin >> ChooseCreate;
+    cout << endl;
     cout << "Please enter the row for the maze: ";
     cin >> maze_row;
     cout << "\nPlease enter the colume for the maze: ";
     cin >> maze_colume;
     system("cls");
     jump:
-    CreatePrimMaze();
+    switch (ChooseCreate) {
+        case 1:{
+            CreatePrimMaze();
+            break;
+        }
+        case 2:{
+            CreateDFSMaze();
+            break;
+        }
+        case 3:{
+            InitRecursiveMaze();
+            CreateRecursiveMaze(maze, 1, 1, maze_row, maze_colume);
+            break;
+        }
+        default:
+            exit(0);
+    }
     if(maze[maze_row][maze_colume] != WALL){
         End.x = maze_row;
         End.y = maze_colume;

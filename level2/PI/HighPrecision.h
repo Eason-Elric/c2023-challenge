@@ -1,6 +1,6 @@
 #ifndef _HIGHPRECISION_H_
 #define _HIGHPRECISION_H_
-#include<string>
+#include <string>
 #define maxn 1000010
 using namespace std;
 
