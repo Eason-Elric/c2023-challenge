@@ -4,6 +4,17 @@
 #define maxn 1000010
 using namespace std;
 
+void scan(int num__[]);
+void print(int num__[]);
+int compare(int frist__[], int second__[]);
+void numcpy__(int origin__[], int outcome__[], int temp);
+void add(int frist__[], int second__[]);
+void sub(int frist__[], int second__[]);
+void high_mult(int frist__[], int second__[], int outcome__[]);
+void single_mult(int frist__[], int second__);
+void high_div(int frist__[], int second__[], int outcome__[]);
+int signle_div(int frist__[], int second, int outcome__[]);
+
 void scan(int num__[]) {
     string str = "";
     getline(cin, str);

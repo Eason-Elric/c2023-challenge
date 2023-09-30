@@ -10,6 +10,9 @@ CONSOLE_SCREEN_BUFFER_INFO screenInfo;
 
 char keystroke = '\0';
 
+void GotoPos(int x, int y);
+void Move();
+
 void GotoPos(int x, int y){
     Pos.X = x;
     Pos.Y = y;

@@ -5,6 +5,44 @@ using namespace std;
 string str = "";
 int choose__ = 0, num = 0;
 
+void encode(string str__, int n);
+void decode(string str__, int n);
+
+int main(){
+    while(1) {
+        cout << "-----------------" << endl;
+        cout << "1: Encryption" << endl;
+        cout << "2: Decryption" << endl;
+        cout << "3: Exit" << endl;
+        cout << "-----------------" << endl;
+        cout << "Please choose: ";
+        cin >> choose__;
+        cout << endl;
+        getchar();
+        switch(choose__) {
+            case 1: {
+                cout << "Please input strings: ";
+                getline(cin, str);
+                cout << endl << "Please input number: ";
+                cin >> num;
+                encode(str, num);
+                break;
+            }
+            case 2:{
+                cout << "Please input strings: ";
+                getline(cin, str);
+                cout << endl << "Please input number: ";
+                cin >> num;
+                decode(str, num);
+                break;
+            }
+            case 3:
+                exit(0);
+        }
+        cout << endl;
+    }
+}
+
 void encode(string str__, int n) {
     char c = '\0';
     for(int i = 0; i < str__.length(); i++) {
@@ -43,37 +81,4 @@ void decode(string str__, int n) {
             str__[i] = c;
     }
     cout << endl << "After decode: " << str__ << endl;
-}
-
-int main(){
-    while(1){
-        cout << "-----------------" << endl;
-        cout << "1: Encryption" << endl;
-        cout << "2: Decryption" << endl;
-        cout << "3: Exit" << endl;
-        cout << "-----------------" << endl;
-        cout << "Please choose: ";
-        cin >> choose__;
-        cout << endl;
-        getchar();
-        switch(choose__){
-            case 1:
-                cout << "Please input strings: ";
-                getline(cin, str);
-                cout << endl << "Please input number: ";
-                cin >> num;
-                encode(str, num);
-                break;
-            case 2:
-                cout << "Please input strings: ";
-                getline(cin, str);
-                cout << endl << "Please input number: ";
-                cin >> num;
-                decode(str, num);
-                break;
-            case 3:
-                exit(0);
-        }
-        cout << endl;
-    }
 }

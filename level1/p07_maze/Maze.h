@@ -26,6 +26,14 @@ std::vector<Block> block;
 std::random_device RandomDevice; // 随机数生成器
 // rand()以秒为单位，随机性过弱，无法达到随机效果
 
+void InitMaze();
+void PrimFindBlock();
+void CreatePrimMaze();
+void DFSFindBlock();
+void CreateDFSMaze();
+void InitRecursiveMaze();
+void CreateRecursiveMaze(int Maze[MAXSIZE][MAXSIZE], int x1, int y1, int x2, int y2);
+
 void InitMaze(){
     maze_row += !(maze_row % 2);
     maze_colume += !(maze_colume % 2); // 保证迷宫大小为奇数

@@ -2,7 +2,9 @@
 #define _ISPRIME_H_
 #include<math.h>
 
-bool is_prime(int num__){
+bool is_prime(int num__);
+
+bool is_prime(int num__) {
     if(num__ <= 1)
         return false;
     if(num__ == 2 || num__ == 3)
