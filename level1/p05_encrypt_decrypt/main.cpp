@@ -9,6 +9,9 @@ void encode(string str__, int n);
 void decode(string str__, int n);
 
 int main(){
+    //ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
     while(1) {
         cout << "-----------------" << endl;
         cout << "1: Encryption" << endl;

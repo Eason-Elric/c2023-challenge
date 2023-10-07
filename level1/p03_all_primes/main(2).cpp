@@ -1,6 +1,6 @@
 #include <iostream>
-#include<string.h>
-#include<time.h>
+#include <string.h>
+#include <time.h>
 #define maxn 10010
 using namespace std;
 

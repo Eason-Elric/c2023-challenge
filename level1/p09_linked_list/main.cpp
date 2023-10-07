@@ -20,7 +20,7 @@ int main() {
     cout.tie(0);
     ListPoint * Head = (ListPoint * ) malloc(sizeof(ListPoint));
     Head -> Next = NULL;
-    cout << "Please input a list: ";
+    cout << "Please input a list(End with -1): ";
     CreateList(Head);
 
     cout << "\n\nTraverse the list: ";

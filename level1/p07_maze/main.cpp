@@ -57,7 +57,7 @@ int main(){
             else if(maze[i][j] == PATH)
                 cout << " ";
             else
-                cout << (char)0xa8 << (char)0x80 ; // 输出小方块
+                cout << (char)0xa8 << (char)0x80; // 输出小方块
         }
         cout << endl;
     }
