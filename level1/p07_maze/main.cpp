@@ -20,9 +20,9 @@ int main(){
     cin >> ChooseCreate;
     cout << endl;
     cout << "Please enter the row for the maze: ";
-    cin >> maze_row;
+    cin >> MazeRow;
     cout << "\nPlease enter the colume for the maze: ";
-    cin >> maze_colume;
+    cin >> MazeColume;
     system("cls");
     jump:
     switch (ChooseCreate) {
@@ -36,20 +36,20 @@ int main(){
         }
         case 3:{
             InitRecursiveMaze();
-            CreateRecursiveMaze(maze, 1, 1, maze_row, maze_colume);
+            CreateRecursiveMaze(maze, 1, 1, MazeRow, MazeColume);
             break;
         }
         default:
             exit(0);
     }
-    if(maze[maze_row][maze_colume] != WALL){
-        End.x = maze_row;
-        End.y = maze_colume;
+    if(maze[MazeRow][MazeColume] != WALL){
+        End.x = MazeRow;
+        End.y = MazeColume;
     }
     else
         goto jump;
-    for(int i = 0; i <= maze_row + 1; i++){
-        for(int j = 0; j <= maze_colume + 1; j++){
+    for(int i = 0; i <= MazeRow + 1; i++){
+        for(int j = 0; j <= MazeColume + 1; j++){
             if(i == Start.x && j == Start.y)
                 cout << (char)0xa7 << (char)0xb0;
             else if(i == End.x && j == End.y)

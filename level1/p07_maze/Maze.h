@@ -4,7 +4,7 @@
 #include <string.h>
 #include <random>
 
-int maze_row = 0, maze_colume = 0;
+int MazeRow = 0, MazeColume = 0;
 int row = 1, colume = 1; // 当前位置
 int maze[MAXSIZE][MAXSIZE];
 
@@ -35,8 +35,8 @@ void InitRecursiveMaze();
 void CreateRecursiveMaze(int Maze[MAXSIZE][MAXSIZE], int x1, int y1, int x2, int y2);
 
 void InitMaze(){
-    maze_row += !(maze_row % 2);
-    maze_colume += !(maze_colume % 2); // 保证迷宫大小为奇数
+    MazeRow += !(MazeRow % 2);
+    MazeColume += !(MazeColume % 2); // 保证迷宫大小为奇数
     memset(maze, WALL, sizeof(maze));
     maze[1][1] = PATH;
     Start.x = Start.y = 1;
@@ -45,11 +45,11 @@ void InitMaze(){
 void PrimFindBlock(){
     if(row - 1 > 0 && maze[row - 1][colume] == WALL) // up
         block.push_back(Block(row - 1, colume, Up));
-    if(row + 1 <= maze_row && maze[row + 1][colume] == WALL) // down
+    if(row + 1 <= MazeRow && maze[row + 1][colume] == WALL) // down
         block.push_back(Block(row + 1, colume, Down));
     if(colume - 1 > 0 && maze[row][colume - 1] == WALL) // left
         block.push_back(Block(row, colume - 1, Left));
-    if(colume + 1 <= maze_colume && maze[row][colume + 1] == WALL) // right
+    if(colume + 1 <= MazeColume && maze[row][colume + 1] == WALL) // right
         block.push_back(Block(row, colume + 1, Right));
 }
 
@@ -103,7 +103,7 @@ void DFSFindBlock(){
                 break;
             }
             case Down: {
-                if (row + 1 <= maze_row && maze[row + 1][colume] == WALL) // down
+                if (row + 1 <= MazeRow && maze[row + 1][colume] == WALL) // down
                     block.push_back(Block(row + 1, colume, Down));
                 break;
             }
@@ -113,7 +113,7 @@ void DFSFindBlock(){
                 break;
             }
             case Right: {
-                if (colume + 1 <= maze_colume && maze[row][colume + 1] == WALL) // right
+                if (colume + 1 <= MazeColume && maze[row][colume + 1] == WALL) // right
                     block.push_back(Block(row, colume + 1, Right));
                 break;
             }
@@ -156,18 +156,18 @@ void CreateDFSMaze(){
 }
 
 void InitRecursiveMaze(){
-    maze_row += !(maze_row % 2);
-    maze_colume += !(maze_colume % 2); // 保证迷宫大小为奇数
-    for(int i = 1; i <= maze_row; i++)
-        for(int j = 1; j <= maze_colume; j++)
+    MazeRow += !(MazeRow % 2);
+    MazeColume += !(MazeColume % 2); // 保证迷宫大小为奇数
+    for(int i = 1; i <= MazeRow; i++)
+        for(int j = 1; j <= MazeColume; j++)
             maze[i][j] = PATH;
-    for(int i = 0; i <= maze_colume + 1; i++){
+    for(int i = 0; i <= MazeColume + 1; i++){
         maze[0][i] = WALL;
-        maze[maze_row + 1][i] = WALL;
+        maze[MazeRow + 1][i] = WALL;
     }
-    for(int i = 0; i <= maze_row + 1; i++){
+    for(int i = 0; i <= MazeRow + 1; i++){
         maze[i][0] = WALL;
-        maze[i][maze_colume + 1] = WALL;
+        maze[i][MazeColume + 1] = WALL;
     }
     Start.x = Start.y = 1;
 }
