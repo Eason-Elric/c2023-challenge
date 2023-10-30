@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <iostream>
+
 using namespace std;
 
 long long int num = 0;
@@ -43,7 +44,7 @@ int main() {
             flag = false;
         }
         else
-            printf("%.4d", outcome_num + temp / reserved_num); // 输出上一轮的余数加上这轮的商, %.4d == %04d
+            printf("%.4d", outcome_num + temp / reserved_num); // 输出上一轮的余数加上这轮的商
         outcome_num = temp % reserved_num;
     }
     delete[] remainder;

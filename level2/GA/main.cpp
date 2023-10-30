@@ -11,9 +11,9 @@ const int ROW = 10;
 const int COLUMN = 10;
 const int LOOPPERCENT = 50;
 char DIRECTIONS[4] = {'N', 'S', 'W', 'E'};
-const int INDIVIDUALSNUM = 30;
+const int INDIVIDUALSNUM = 50;
 const double HERITABILITY = 0.2;
-const int ITERATENUM = 30;
+const int ITERATENUM = 50;
 
 /* 定义变量 */
 POINT_ LastPoint = make_pair(1, 1);
