@@ -23,7 +23,6 @@ add_executable(p07_maze p07_maze/main.cpp
 add_executable(p08_push_boxes p08_push_boxes/main.cpp
         p08_push_boxes/RandomMap.h
         p08_push_boxes/Archive.h
-        p08_push_boxes/ScreenDisplay.h
 )
 
 add_executable(p09_linked_list p09_linked_list/main.cpp)
