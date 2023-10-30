@@ -11,9 +11,9 @@ const int ROW = 10;
 const int COLUMN = 10;
 const int LOOPPERCENT = 50;
 char DIRECTIONS[4] = {'N', 'S', 'W', 'E'};
-const int INDIVIDUALSNUM = 50;
+const int INDIVIDUALSNUM = 30;
 const double HERITABILITY = 0.2;
-const int ITERATENUM = 50;
+const int ITERATENUM = 30;
 
 /* 定义变量 */
 POINT_ LastPoint = make_pair(1, 1);
@@ -22,7 +22,6 @@ map<POINT_, double> AlterTropism;
 map<POINT_, double> Tropism;
 MAZE Maze = MAZE(ROW, COLUMN);
 PATH_ Path;
-
 
 int Manhattan(int x1, int y1, int x2, int y2);
 double Euclid(int x1, int y1, int x2, int y2);
@@ -170,13 +169,29 @@ bool SingleMovement(int Row, int Column) {
                 }
             }
 
+    POINT_ LastBifurcate;
+    char LastDirection;
+
     if(!DirectionsList.empty()) {
         for(auto iter : DirectionsList)
             ProList.push_back(Tropism[iter] / TotalTropism);
         Path.push_back(Roulette(DirectionsList, ProList));
         LastPoint = make_pair(Row, Column);
+        if(DirectionsList.size() > 1) {
+            LastBifurcate = make_pair(Row, Column);
+            if(Path[Path.size() - 1] == make_pair(Row - 1, Column))
+                LastDirection = 'N';
+            else if(Path[Path.size() - 1] == make_pair(Row + 1, Column))
+                LastDirection = 'S';
+            else if(Path[Path.size() - 1] == make_pair(Row, Column - 1))
+                LastDirection = 'W';
+            else if(Path[Path.size() - 1] == make_pair(Row, Column - 1))
+                LastDirection = 'E';
+        }
         return true;
     }
+
+    Maze.MazeMap[LastBifurcate][LastDirection] = 0;
     return false;
 }
 
