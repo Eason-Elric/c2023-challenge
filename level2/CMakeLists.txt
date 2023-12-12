@@ -2,7 +2,10 @@ project(level2)
 
 add_executable(GA "GA/main.cpp"
         GA/CppMaze.h
+        NeuralNetworks/main.cpp
 )
+
+add_executable(NeuralNetworks "NeuralNetworks/Network/main.cpp")
 
 add_executable(PI "PI/main(Machin).cpp"
         PI/HighPrecision.h)
