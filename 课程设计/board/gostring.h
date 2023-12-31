@@ -112,8 +112,8 @@ struct GoString {
 
         CombinedLiberties.insert(OtherGoString.Liberties.begin(), OtherGoString.Liberties.end());
         CombinedLiberties.insert(this -> Liberties.begin(), this -> Liberties.end());
-        std::set_difference(CombinedLiberties.begin(), CombinedLiberties.end(), CombinedStones.begin(),
-                            CombinedStones.end(),
+        std::set_difference(CombinedLiberties.begin(), CombinedLiberties.end(),
+                            CombinedStones.begin(), CombinedStones.end(),
                             inserter(RealLiberties, RealLiberties.begin()));
 
         return {this -> StoneColor, CombinedStones, RealLiberties};
@@ -121,3 +121,4 @@ struct GoString {
 };
 
 #endif //GO_GOSTRING_H
+
